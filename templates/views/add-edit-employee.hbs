@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+
+    {{!-- <title>Admin Login</title> --}}
+</head>
+
+<body class="bg">
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQF8_tltlaNCkA/company-logo_200_200/0/1564162838121?e=2159024400&v=beta&t=KqzHHXQAjvbIhgJXuxklcfY3CbxFyjUWJu6T3TN4y18"
+                width="30" height="30" class="d-inline-block align-top" alt="" />
+            Employee Payroll Management
+        </a>
+        <button type="button" class="btn btn-dark">Signup</button>
+    </nav>
+
+    {{!-- <h2 class="text-center">Employee Details</h2> --}}
+
+    <div class="container">
+        <div class="row text-white">
+            <div class="col-6 mx-auto">
+                <h3 class="text-center">{{viewTitle}}</h3>
+                <form class="form-controller px-5" action="/employee" method="POST" autocomplete="off"
+                    enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="InputFirstName">First Name</label>
+                                <input type="text" class="form-control" id="InputFirstName"
+                                    placeholder="Enter First Name" name="firstname" value="{{employee.firstname}}">
+                                <div class="text-danger">
+                                    {{employee.firstNameError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="InputLastName">Last Name</label>
+                                <input type="text" class="form-control" id="InputLastName" placeholder="Enter Last Name"
+                                    name="lastname" value="{{employee.lastname}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="InputEmail">Email address</label>
+                                <input type="email" class="form-control" id="InputEmail" placeholder="Enter email"
+                                    name="email" value="{{employee.email}}">
+                                <div class="text-danger">
+                                    {{employee.emailError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="InputPhone">Phone Number</label>
+                                <input type="number" class="form-control" id="InputPhone"
+                                    placeholder="Enter Phone Number" name="phone" value="{{employee.phone}}">
+                                <div class="text-danger">
+                                    {{employee.phoneError}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputAddress">Address</label>
+                        <textarea class="form-control rounded-0" id="InputAddress" placeholder="Enter Address" rows="2"
+                            name="address" value="{{employee.address}}"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="txtPANCard">PAN Card</label>
+                                <input type="text" id="txtPANCard" class="form-control" placeholder="Enter PAN Number"
+                                    name="pancard" value="{{employee.pancard}}">
+                                <div class="text-danger">
+                                    {{employee.pancardError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="InputPhoto">Upload Picture</label>
+                                <input type="file" name="image" class="form-control" id="InputPhoto" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="InputBasic">Basic Salary</label>
+                                <input type="number" class="form-control" id="InputBasic"
+                                    placeholder="Enter Basic Salary" maxlength="6" name="basicsalary"
+                                    value="{{employee.basicsalary}}">
+                                <div class="text-danger">
+                                    {{employee.basicsalaryError}}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputDA">Dearness Allowance</label>
+                                <input type="number" class="form-control" id="InputDA" placeholder="Enter DA"
+                                    maxlength="4" name="da" value="{{employee.da}}">
+                                <div class="text-danger">
+                                    {{employee.daError}}
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputHRA">House Rental Allowance</label>
+                                <input type="number" class="form-control" id="InputHRA" placeholder="Enter HRA"
+                                    maxlength="4" name="hra" value="{{employee.hra}}">
+                                <div class="text-danger">
+                                    {{employee.hraError}}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputMedical">Medical Allowance</label>
+                                <input type="number" class="form-control" id="InputMedical" placeholder="Enter Medical"
+                                    maxlength="4" name="medical" value="{{employee.medical}}">
+                                <div class="text-danger">
+                                    {{employee.medicalError}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="InputProfTax">Professinal Tax</label>
+                                <input type="number" class="form-control" id="InputProfTax"
+                                    placeholder="Enter Professional Tax" maxlength="3" name="proftax"
+                                    value="{{employee.proftax}}">
+                                <div class="text-danger">
+                                    {{employee.proftaxError}}
+                                </div>
+                            </div>
+                            <div class="form-group dropdown">
+
+                                <label for="incometaxperc">Income Tax</label>
+
+                                <select name="incometax" id="incometaxperc" value={{employee.incometax}}>
+                                    <option value="10">10%</option>
+                                    <option value="20">20%</option>
+                                    <option value="30">30%</option>
+
+
+                                </select>
+                                <div class="text-danger">
+                                    {{employee.incometaxError}}
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputProvidentFund">Provident Fund</label>
+                                <input type="number" class="form-control" id="InputProvidentFund"
+                                    placeholder='Enter Provident Fund' maxlength="5" name="providentfund"
+                                    value={{employee.providentfund}}>
+                                <div class="text-danger">
+                                    {{employee.providentfundError}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-block"><i class="fa fa-database"
+                            aria-hidden="true"></i>
+                        Save</button>
+
+                </form>

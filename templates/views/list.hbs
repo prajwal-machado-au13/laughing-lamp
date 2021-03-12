@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Pancard</th>
+                <th>Basic Salary</th>
+                <th>DA</th>
+                <th>HRA</th>
+                <th>Medical Allowance</th>
+                <th>Professsional Tax</th>
+                <th>Income Tax</th>
+                <th>Provident Fund</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.firstname}}</td>
+                <td>{{this.lastname}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.address}}</td>
+                <td>{{this.pancard}}</td>
+                <td>{{this.basicsalary}}</td>
+                <td>{{this.da}}</td>
+                <td>{{this.hra}}</td>
+                <td>{{this.medical}}</td>
+                <td>{{this.proftax}}</td>
+                <td>{{this.incometax}}</td>
+                <td>{{this.providentfund}}</td>
+                <td>
+                    <a><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                    <a><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+
+            {{/each}}
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

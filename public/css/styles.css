@@ -1,0 +1,24 @@
+.bg {
+  background-image: linear-gradient(to left, #011129, #2d2050, #6e2068, #b20766, #eb124b);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.form-controller{
+  background: rgb(78, 83, 99);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+-moz-appearance: textfield;
+}
